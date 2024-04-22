@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('mime', 25);
             $table->index('post_id');
             $table->integer('size');
-            $table->timestamps();
+            $table->foriegnId('created_by')->constrained('users');
+            $table->timestamp('created_at')->nullable();
         });
     }
 

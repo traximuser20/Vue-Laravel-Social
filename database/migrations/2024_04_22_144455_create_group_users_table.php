@@ -20,7 +20,8 @@ return new class extends Migration
             $table->timestamp('token_used')->nullable();
             $table->foriegnId('group_id')->constrained('groups');
             $table->foriegnId('user_id')->constrained('users');
-            $table->timestamps();
+            $table->foriegnId('created_by')->constrained('users');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
