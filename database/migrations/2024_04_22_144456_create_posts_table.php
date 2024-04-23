@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->LongText('body')->nullable();
             $table->foriegnId('user_id')->constrained('users');
-            $table->foriegnId('group_id')->constrained('groups');
+            $table->foriegnId('group_id')->nullable()->constrained('groups');
             $table->foriegnId('deleted_by')->nullable()->constrained('users');
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
